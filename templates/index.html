@@ -8,10 +8,17 @@
 <body>
     <h1>Welcome to my website!</h1>
     <p>What do you want to do?</p>
-        <form action="/password" method="get">
-            <input autocomplete="off" autofocus name="password_length" placeholder="How long should the password be?" type="number">
-            <button type="submit"> Generate random password</button>
-
-    
+    <form action="/password" method="get">
+        <input 
+            autocomplete="off" 
+            autofocus 
+            name="password_length" 
+            placeholder="How long should the password be?" 
+            type="number" 
+            min="1" 
+            max="20"
+        >
+        <button type="submit">Generate Random Password</button>
+    </form>
 </body>
 </html>
