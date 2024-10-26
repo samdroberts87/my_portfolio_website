@@ -7,18 +7,46 @@
 </head>
 <body>
     <h1>Welcome to my website!</h1>
-    <p>What do you want to do?</p>
-    <form action="/password" method="get">
-        <input 
-            autocomplete="off" 
-            autofocus 
-            name="password_length" 
-            placeholder="How long should the password be?" 
-            type="number" 
-            min="1" 
-            max="20"
-        >
-        <button type="submit">Generate Random Password</button>
-    </form>
+    <h3>What do you want to do?</h3>
+
+    <div>
+        <h3>Generate a random password</h3>
+        <form action="/password" method="get">
+            <input 
+                autocomplete="off" 
+                autofocus 
+                name="password_length" 
+                placeholder="How long should the password be?" 
+                type="number" 
+                min="1" 
+                max="20"
+            >
+            <button type="submit">Generate Random Password</button>
+        </form>
+    </div>
+
+    <div>
+        <h3>Generate a random joke from the following categories</h3>
+        <ol>
+            <li>Programming</li>
+            <li>Miscellaneous</li>
+            <li>Dark</li>
+            <li>Pun</li>
+            <li>Any</li>
+        </ol>
+        <form action="/joke" method="get">
+            <input 
+                autocomplete="off" 
+                autofocus 
+                name="user_category" 
+                placeholder="Enter your number for chosen category" 
+                type="number" 
+                min="1" 
+                max="5"
+            >
+            <button type="submit">Generate Random Joke</button>
+        </form>
+    </div>
+
 </body>
 </html>
