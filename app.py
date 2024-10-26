@@ -13,7 +13,13 @@ def index():
 @app.route("/password")
 def password():
     # Get the value from the input field of the homepage
-    password_length = int(request.args["password_length"])
+    password_length = request.args.get("password_length")
+    if not password_length:
+        password_length = 10
+    else:
+        password_length = int(password_length)
+
+
     
     # Generate the password using the input length
     final_result = password_generator(password_length)
@@ -29,7 +35,13 @@ def password_generator(password_length):
 
 @app.route("/joke")
 def joke():
-    user_category = int(request.args["user_category"])
+
+    user_category = request.args.get("user_category")
+    if not user_category:
+        user_category = 5
+    else:
+        user_category = int(user_category)
+    
     url = get_url(user_category)
     final_joke = get_joke(url)
     return render_template("joke.html", final_joke=final_joke)
